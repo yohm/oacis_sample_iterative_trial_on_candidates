@@ -7,8 +7,8 @@ class CandidatesProvider
     @base = base_param
     @candidates = candidate_params
 
-    @sim = Simulator.where(name: "sequential_trial_test").first
-    @host = Host.where(name:"localhost").first
+    @sim = Simulator.find_by_name("sequential_trial_test")
+    @host = Host.find_by_name("localhost")
     @host_param = @host.default_host_parameters
   end
 

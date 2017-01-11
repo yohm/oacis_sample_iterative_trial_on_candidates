@@ -7,8 +7,8 @@ class CandidatesProvider():
         self.base = base_param
         self.candidates = candidate_params
 
-        self.sim = oacis.Simulator.where(name="sequential_trial_test").first()
-        self.host = oacis.Host.where(name="localhost").first()
+        self.sim = oacis.Simulator.find_by_name("sequential_trial_test")
+        self.host = oacis.Host.find_by_name("localhost")
         self.host_param = self.host.default_host_parameters()
 
     def initial_parameter(self):
