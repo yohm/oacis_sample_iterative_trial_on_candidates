@@ -52,8 +52,8 @@ class CandidatesProvider
 end
 
 OacisWatcher::start do |w|
-  y = YAML.load( File.open(ARGV.first) )
-  y.each do |cand|
+  j = JSON.load( File.open(ARGV.first) )
+  j.each do |cand|
     c = CandidatesProvider.new( cand["base"], cand["candidates"], w )
     c.create_ps_and_run( c.initial_parameter )
   end

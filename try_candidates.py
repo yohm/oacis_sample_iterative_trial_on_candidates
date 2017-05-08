@@ -53,11 +53,11 @@ class CandidatesProvider():
             return param
 
 if __name__ == "__main__":
-    import yaml,sys
+    import json,sys
     def main():
         watcher = oacis.OacisWatcher()
         f = open(sys.argv[1])
-        y = yaml.load(f)
+        y = json.load(f)
         f.close()
 
         for cand in y:
